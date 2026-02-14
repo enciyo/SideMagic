@@ -1,4 +1,5 @@
 import { defineConfig } from "wxt";
+import pkg from "./package.json";
 import {
   FRAME_EMBEDDING_DNR_RULE_ID,
   FRAME_EMBEDDING_DNR_RULE_PATH,
@@ -23,7 +24,7 @@ export default defineConfig({
       name: "__MSG_extName__",
       description: "__MSG_extDescription__",
       default_locale: "en",
-      version: "0.1.0",
+      version: pkg.version,
       host_permissions: hostPermissions,
     };
 
@@ -64,6 +65,16 @@ export default defineConfig({
           },
         },
         web_accessible_resources: webAccessibleResources,
+        // AMO zorunluluğu: veri toplama/iletim beyanı (Kasım 2025+)
+        browser_specific_settings: {
+          gecko: {
+            data_collection_permissions: {
+              // Sayfa içeriği kullanıcı "attach" ettiğinde seçilen AI chatbot'a gönderilir (PRIVACY.md ile uyumlu)
+              required: ["websiteContent"],
+              optional: [],
+            },
+          },
+        },
       };
     }
 
