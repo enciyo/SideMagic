@@ -31,6 +31,11 @@ stats-*.json
 .DS_Store
 Thumbs.db
 
+# Cursor / MCP / Serena (local tooling)
+.cursor/
+.playwright-mcp/
+.serena/
+
 # IDE / Editor
 .vscode/*
 !.vscode/extensions.json
