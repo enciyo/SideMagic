@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideMagic</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Home screen: chatbot selection -->
+    <div id="home-screen" class="screen active">
+      <div class="container">
+        <header class="header">
+          <h1 class="title">SideMagic</h1>
+          <p class="subtitle" data-i18n="subtitle"></p>
+        </header>
+
+        <div class="cards">
+          <button class="card card--gemini" data-url="https://gemini.google.com/app" data-id="gemini">
+            <div class="card__icon card__icon--img">
+              <img src="/chatbot-icons/gemini.svg" alt="Gemini" width="24" height="24" />
+            </div>
+            <span class="card__name">Gemini</span>
+            <span class="card__domain">gemini.google.com</span>
+          </button>
+
+          <button class="card card--grok" data-url="https://grok.com/" data-id="grok">
+            <div class="card__icon card__icon--img">
+              <img src="/chatbot-icons/grok.svg" alt="Grok" width="24" height="24" />
+            </div>
+            <span class="card__name">Grok</span>
+            <span class="card__domain">grok.com</span>
+          </button>
+
+          <button class="card card--claude" data-url="https://claude.ai/new" data-id="claude">
+            <div class="card__icon card__icon--img">
+              <img src="/chatbot-icons/claude.svg" alt="Claude" width="24" height="24" />
+            </div>
+            <span class="card__name">Claude</span>
+            <span class="card__domain">claude.ai</span>
+          </button>
+
+          <button class="card card--kimi" data-url="https://www.kimi.com/" data-id="kimi">
+            <div class="card__icon card__icon--img">
+              <img src="/chatbot-icons/kimi.svg" alt="Kimi" width="24" height="24" />
+            </div>
+            <span class="card__name">Kimi</span>
+            <span class="card__domain">kimi.com</span>
+          </button>
+
+        </div>
+
+        <div class="info">
+          <h2 class="info__title" data-i18n="commands"></h2>
+          <div class="info__commands">
+            <div class="info__cmd">
+              <code>/website</code>
+              <span data-i18n="cmdWebsiteDesc"></span>
+            </div>
+            <div class="info__cmd">
+              <code>/website-text</code>
+              <span data-i18n="cmdWebsiteTextDesc"></span>
+            </div>
+            <div class="info__cmd">
+              <code>/url</code>
+              <span data-i18n="cmdUrlDesc"></span>
+            </div>
+          </div>
+          <p class="info__hint" data-i18n-html="hintShortcut"></p>
+          <p class="info__hint info__hint--small" data-i18n-html="hintFirefox"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot iframe screen -->
+    <div id="chatbot-screen" class="screen">
+      <div class="toolbar">
+        <button id="btn-back" class="toolbar__btn" data-i18n-title="btnBackTitle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <span id="chatbot-label" class="toolbar__label"></span>
+        <button id="btn-refresh" class="toolbar__btn" data-i18n-title="btnRefreshTitle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M1 4v6h6M23 20v-6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <iframe id="chatbot-iframe" class="chatbot-iframe"></iframe>
+
+      <!-- Auth overlay: shown when iframe redirects to a login page -->
+      <div id="auth-overlay" class="auth-overlay" hidden>
+        <div class="auth-overlay__box">
+          <svg class="auth-overlay__icon" width="40" height="40" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3 class="auth-overlay__title" data-i18n="authOverlayTitle"></h3>
+          <p class="auth-overlay__desc" data-i18n="authOverlayDesc"></p>
+          <div class="auth-overlay__spinner"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Command palette: Opens with Cmd+. -->
+    <div id="command-palette" class="command-palette" role="dialog" data-i18n-aria-label="commandPaletteAriaLabel" hidden>
+      <div class="command-palette__box">
+        <div class="command-palette__search-wrap">
+          <svg class="command-palette__search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 20l-4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input id="command-palette-search" type="search" class="command-palette__search" autocomplete="off" data-i18n-placeholder="commandPaletteSearchPlaceholder" placeholder="Search commands..." />
+        </div>
+        <ul id="command-palette-list" class="command-palette__list" role="listbox"></ul>
+      </div>
+    </div>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

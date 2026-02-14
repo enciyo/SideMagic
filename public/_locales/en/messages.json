@@ -1,0 +1,98 @@
+{
+  "extName": {
+    "message": "SideMagic"
+  },
+  "extDescription": {
+    "message": "Attach website content to AI chatbots as files"
+  },
+  "openCommandPalette": {
+    "message": "Open command palette"
+  },
+  "subtitle": {
+    "message": "Quickly attach content to AI chatbots"
+  },
+  "commands": {
+    "message": "Commands"
+  },
+  "cmdWebsiteDesc": {
+    "message": "Attach page HTML as a file"
+  },
+  "cmdWebsiteTextDesc": {
+    "message": "Attach page text as a file"
+  },
+  "cmdUrlDesc": {
+    "message": "Insert active tab URL"
+  },
+  "hintShortcut": {
+    "message": "Press <strong>Cmd+.</strong> (or Ctrl+.) to open the command palette."
+  },
+  "hintFirefox": {
+    "message": "To open the palette from the <strong>main tab</strong> with Cmd+.: <code>about:addons</code> → Gear → <strong>Extension shortcuts</strong> → assign <strong>Ctrl+.</strong> to \"Open command palette\"."
+  },
+  "btnBackTitle": {
+    "message": "Back to home"
+  },
+  "btnRefreshTitle": {
+    "message": "Refresh"
+  },
+  "commandPaletteAriaLabel": {
+    "message": "Command palette"
+  },
+  "commandPaletteSearchPlaceholder": {
+    "message": "Search commands..."
+  },
+  "commandPaletteNoResults": {
+    "message": "No commands match"
+  },
+  "toastUrlAdded": {
+    "message": "URL added"
+  },
+  "toastUrlFailed": {
+    "message": "Could not get URL"
+  },
+  "toastFetchingContent": {
+    "message": "Fetching page content..."
+  },
+  "toastContentFailed": {
+    "message": "Could not get page content"
+  },
+  "toastFileAttached": {
+    "message": "$filename$ attached",
+    "placeholders": {
+      "filename": {
+        "content": "$1",
+        "example": "index.html"
+      }
+    }
+  },
+  "toastAttachNotSupported": {
+    "message": "File attachment is not supported on this site yet"
+  },
+  "toastUnknownError": {
+    "message": "Unknown error"
+  },
+  "errorPrefix": {
+    "message": "Error: $message$",
+    "placeholders": {
+      "message": {
+        "content": "$1",
+        "example": "Something went wrong"
+      }
+    }
+  },
+  "errorSourceTabNotFound": {
+    "message": "Source tab not found. Please open a web page."
+  },
+  "errorTabIdNotFound": {
+    "message": "Tab ID not found"
+  },
+  "errorPageContentFailed": {
+    "message": "Could not retrieve page content"
+  },
+  "authOverlayTitle": {
+    "message": "Logging in..."
+  },
+  "authOverlayDesc": {
+    "message": "The login page has been opened in a new tab. Please complete the login and close the tab — this page will reload automatically."
+  }
+}

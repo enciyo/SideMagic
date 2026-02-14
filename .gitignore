@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# WXT (Web Extension Tools)
+.output/
+.wxt/
+web-ext.config.ts
+*.zip
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Build / stats
+dist/
+stats.html
+stats-*.json
+
+# Environment
+.env
+.env.*
+!.env.example
+*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test (ileride eklenirse)
+coverage/
+.nyc_output/

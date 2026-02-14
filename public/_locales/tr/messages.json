@@ -1,0 +1,98 @@
+{
+  "extName": {
+    "message": "SideMagic"
+  },
+  "extDescription": {
+    "message": "Web sitesi içeriğini AI chatbot'lara dosya olarak ekle"
+  },
+  "openCommandPalette": {
+    "message": "Komut paletini aç"
+  },
+  "subtitle": {
+    "message": "AI chatbot'larına hızlıca içerik ekle"
+  },
+  "commands": {
+    "message": "Komutlar"
+  },
+  "cmdWebsiteDesc": {
+    "message": "Sayfanın HTML'ini dosya olarak ekle"
+  },
+  "cmdWebsiteTextDesc": {
+    "message": "Sayfanın metnini dosya olarak ekle"
+  },
+  "cmdUrlDesc": {
+    "message": "Aktif sekmenin URL'ini ekle"
+  },
+  "hintShortcut": {
+    "message": "<strong>Cmd+.</strong> (veya Ctrl+.) ile komut paletini açın."
+  },
+  "hintFirefox": {
+    "message": "<strong>Ana sekmede</strong> Cmd+. ile palet açılsın istiyorsan: <code>about:addons</code> → Dişli → <strong>Eklenti kısayolları</strong> → \"Komut paletini aç\" satırına <strong>Ctrl+.</strong> atayın."
+  },
+  "btnBackTitle": {
+    "message": "Ana sayfaya dön"
+  },
+  "btnRefreshTitle": {
+    "message": "Yenile"
+  },
+  "commandPaletteAriaLabel": {
+    "message": "Komut paleti"
+  },
+  "commandPaletteSearchPlaceholder": {
+    "message": "Komutlarda ara..."
+  },
+  "commandPaletteNoResults": {
+    "message": "Eşleşen komut yok"
+  },
+  "toastUrlAdded": {
+    "message": "URL eklendi"
+  },
+  "toastUrlFailed": {
+    "message": "URL alınamadı"
+  },
+  "toastFetchingContent": {
+    "message": "Sayfa içeriği alınıyor..."
+  },
+  "toastContentFailed": {
+    "message": "Sayfa içeriği alınamadı"
+  },
+  "toastFileAttached": {
+    "message": "$filename$ eklendi",
+    "placeholders": {
+      "filename": {
+        "content": "$1",
+        "example": "index.html"
+      }
+    }
+  },
+  "toastAttachNotSupported": {
+    "message": "Bu sitede dosya ekleme şu an desteklenmiyor"
+  },
+  "toastUnknownError": {
+    "message": "Bilinmeyen hata"
+  },
+  "errorPrefix": {
+    "message": "Hata: $message$",
+    "placeholders": {
+      "message": {
+        "content": "$1",
+        "example": "Bir şeyler yanlış gitti"
+      }
+    }
+  },
+  "errorSourceTabNotFound": {
+    "message": "Kaynak sekme bulunamadı. Lütfen bir web sayfası açın."
+  },
+  "errorTabIdNotFound": {
+    "message": "Sekme ID'si bulunamadı"
+  },
+  "errorPageContentFailed": {
+    "message": "Sayfa içeriği alınamadı"
+  },
+  "authOverlayTitle": {
+    "message": "Giriş yapılıyor..."
+  },
+  "authOverlayDesc": {
+    "message": "Giriş sayfası yeni bir sekmede açıldı. Lütfen giriş yapıp sekmeyi kapatın — bu sayfa otomatik olarak yenilenecek."
+  }
+}
