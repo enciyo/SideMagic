@@ -53,7 +53,7 @@
 > Coming soon
 
 #### Firefox Add-ons
-> Coming soon
+https://addons.mozilla.org/en-US/firefox/addon/sidemagic/
 
 #### Manual Installation (Developer Mode)
 
