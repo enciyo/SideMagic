@@ -92,7 +92,8 @@ async function setupInterceptChrome(
   mimeType: string,
 ): Promise<boolean> {
   // 1. Inject the external main-world script (CSP-safe, from extension URL).
-  const scriptUrl = browser.runtime.getURL("intercept-main-world.js");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const scriptUrl = browser.runtime.getURL("intercept-main-world.js" as any);
   const existingScript = document.querySelector(`script[src="${scriptUrl}"]`);
 
   if (!existingScript) {
