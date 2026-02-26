@@ -147,10 +147,10 @@
 ### 📦 Kurulum
 
 #### Chrome Web Mağazası
-> Yakında
+[Link](https://chromewebstore.google.com/detail/jpfjjonpenccbiokoedbgkfegobfdjif?utm_source=item-share-cb)
 
 #### Firefox Eklentileri
-> Yakında
+[Link](https://addons.mozilla.org/en-US/firefox/addon/sidemagic/)
 
 #### Manuel Kurulum (Geliştirici Modu)
 
