@@ -27,6 +27,8 @@ export interface RuntimeMessage {
   mimeType?: string;
   /** Auth redirect URL (for AUTH_REDIRECT_DETECTED) */
   url?: string;
+  /** Origin URL of the content script's frame (for SETUP_FILE_INTERCEPT tab discovery) */
+  originUrl?: string;
 }
 
 /** Runtime message response structure */

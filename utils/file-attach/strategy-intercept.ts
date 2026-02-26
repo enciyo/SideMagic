@@ -71,26 +71,56 @@ function setupInterceptFirefox(): {
   };
 }
 
-// ── Chrome: background scripting.executeScript ────────────────────────
+// ── Chrome: External script injection into main world ─────────────────
+//
+// WHY NOT background scripting.executeScript:
+// Content script runs inside an iframe in the extension's side panel.
+// Extension pages have no sender.tab.id / sender.documentId, so
+// scripting.executeScript cannot target them.
+//
+// WHY NOT inline <script> tag:
+// MV3 extension CSP blocks inline scripts (no 'unsafe-inline').
+//
+// SOLUTION: Inject intercept-main-world.js (a web_accessible_resource)
+// via <script src="chrome-extension://…/intercept-main-world.js">.
+// Then send file data via window.postMessage → the script listens for
+// SIDEMAGIC_SETUP_INTERCEPT and sets up prototype overrides in page JS.
 
 async function setupInterceptChrome(
   content: string,
   filename: string,
   mimeType: string,
 ): Promise<boolean> {
-  console.log("SideMagic [Chrome]: Attempting background interception...");
-  try {
-    const response = await browser.runtime.sendMessage({
-      type: "SETUP_FILE_INTERCEPT",
+  // 1. Inject the external main-world script (CSP-safe, from extension URL).
+  const scriptUrl = browser.runtime.getURL("intercept-main-world.js");
+  const existingScript = document.querySelector(`script[src="${scriptUrl}"]`);
+
+  if (!existingScript) {
+    const script = document.createElement("script");
+    script.src = scriptUrl;
+    await new Promise<void>((resolve, reject) => {
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("script load failed"));
+      document.documentElement.appendChild(script);
+    });
+    console.log("SideMagic [Chrome]: intercept-main-world.js loaded");
+  } else {
+    console.log("SideMagic [Chrome]: intercept-main-world.js already present");
+  }
+
+  // 2. Send file data to the main-world script via postMessage.
+  window.postMessage(
+    {
+      type: "SIDEMAGIC_SETUP_INTERCEPT",
       content,
       filename,
       mimeType,
-    });
-    return response?.success === true;
-  } catch (err) {
-    console.warn("SideMagic [Chrome]: Background interception failed:", err);
-    return false;
-  }
+    },
+    "*",
+  );
+
+  console.log("SideMagic [Chrome]: SIDEMAGIC_SETUP_INTERCEPT posted to main world");
+  return true;
 }
 
 // ── Firefox flow ──────────────────────────────────────────────────────

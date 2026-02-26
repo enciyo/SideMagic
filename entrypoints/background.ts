@@ -81,6 +81,7 @@ export default defineBackground(() => {
           message.content ?? "",
           message.filename ?? "file.txt",
           message.mimeType ?? "text/plain",
+          message.originUrl,
         )
           .then((ok) => sendResponse({ success: ok }))
           .catch((err) =>

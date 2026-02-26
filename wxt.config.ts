@@ -60,7 +60,7 @@ export default defineConfig({
         ],
         commands: {
           "open-command-palette": {
-            suggested_key: { default: "Ctrl+Period", mac: "Command+Period" },
+            suggested_key: { default: "Ctrl+Shift+Period", mac: "Command+Shift+Period" },
             description: "__MSG_openCommandPalette__",
           },
         },
@@ -95,7 +95,7 @@ export default defineConfig({
       },
       commands: {
         "open-command-palette": {
-          suggested_key: { default: "Ctrl+Period", mac: "Command+Period" },
+          suggested_key: { default: "Ctrl+Shift+Period", mac: "Command+Shift+Period" },
           description: "__MSG_openCommandPalette__",
         },
       },
