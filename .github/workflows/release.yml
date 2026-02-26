@@ -31,14 +31,21 @@ jobs:
       - name: Build & ZIP Chrome
         run: pnpm run zip
 
+      - name: Save Chrome ZIP
+        run: mkdir -p release-zips && cp .output/*.zip release-zips/
+
       - name: Build & ZIP Firefox
         run: pnpm run zip:firefox
+
+      - name: Save Firefox ZIP
+        run: cp .output/*.zip release-zips/
 
       - name: Upload ZIPs
         uses: actions/upload-artifact@v4
         with:
           name: extension-zips
-          path: .output/*.zip
+          path: release-zips/*.zip
+          if-no-files-found: error
 
   release:
     needs: build
